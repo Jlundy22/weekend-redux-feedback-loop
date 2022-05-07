@@ -16,7 +16,7 @@ function Comment() {
             type: 'COMMENT',
             payload: commentToAdd
         })
-        //history.push('/Comment')
+        history.push('/Review')
     }
 
     return (

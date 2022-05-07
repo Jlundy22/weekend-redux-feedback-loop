@@ -24,11 +24,20 @@ const feelingReducer = (state = [], action) => {
     return state;
 };
 
+const supportReducer = (state = [], action) => {
+    // TODO: Products added to the cart
+    if (action.type === 'SUPPORT') {
+        return [...state, action.payload];
+    }
+    return state;
+};
+
 // The store is the big JavaScript Object that holds all of the information for our application
 const storeInstance = createStore(
     combineReducers({
         feelingReducer,
-        understandingReducer
+        understandingReducer,
+        supportReducer
     }),  
     applyMiddleware(logger)  
 );

@@ -13,10 +13,10 @@ function Support() {
 
     const buttonClick = () => {
         dispatch({
-            type: 'FEELING',
+            type: 'SUPPORT',
             payload: supportToAdd
         })
-        history.push('/Understanding')
+        history.push('/Comment')
     }
 
     return (

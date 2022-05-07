@@ -1,5 +1,6 @@
 import {useSelector} from 'react-redux';
 import axios from 'axios';
+import { useHistory } from 'react-router-dom';
 
 
 
@@ -8,8 +9,10 @@ const feeling = useSelector(store => store.feelingReducer[0]);
 const understanding = useSelector(store => store.understandingReducer[0]);
 const support = useSelector(store => store.supportReducer[0]);
 const comment = useSelector(store => store.commentReducer[0]);
+const history = useHistory();
 
     const handleSubmit= () => {
+    
        
         console.log('submit!');
         axios({
@@ -29,6 +32,7 @@ const comment = useSelector(store => store.commentReducer[0]);
             .catch(err => {
               console.error('POST /review failed', err);
             });
+        history.push('/Success');
     }
    
 

@@ -1,17 +1,36 @@
-import {useSelector} from 'react-redux'
+import {useSelector} from 'react-redux';
+import axios from 'axios';
+
+
 
 function Review() {
+const feeling = useSelector(store => store.feelingReducer[0]);
+const understanding = useSelector(store => store.understandingReducer[0]);
+const support = useSelector(store => store.supportReducer[0]);
+const comment = useSelector(store => store.commentReducer[0]);
+
     const handleSubmit= () => {
-        console.log('submit!')
+       
+        console.log('submit!');
+        axios({
+            method: 'POST',
+            url: '/review',
+            data: { 
+               feeling,
+               understanding,
+               support,
+               comment
+            }
+          })
+            .then(() => {
+              console.log('POST /review success');
+      
+            })
+            .catch(err => {
+              console.error('POST /review failed', err);
+            });
     }
-    const feeling = useSelector(store => store.feelingReducer[0]);
-    const understanding = useSelector(store => store.understandingReducer[0]);
-    const support = useSelector(store => store.supportReducer[0]);
-    const comment = useSelector(store => store.commentReducer[0]);
-    // console.log(feeling);
-    // console.log(understanding);
-    // console.log(support);
-    // console.log(comment);
+   
 
     return (
         <>

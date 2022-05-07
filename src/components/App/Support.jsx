@@ -5,10 +5,10 @@ import { useHistory } from 'react-router-dom';
 function Support() {
     const dispatch = useDispatch();
     const history = useHistory();
-    let [supportToAdd, setsupportToAdd] = useState('');
+    let [supportToAdd, setSupportToAdd] = useState('');
 
     const handleInputChange = (event) => {
-        setsupportToAdd(event.target.value);
+        setSupportToAdd(event.target.value);
     }
 
     const buttonClick = () => {

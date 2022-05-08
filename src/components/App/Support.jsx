@@ -13,6 +13,10 @@ function Support() {
     //disbatch the support rating to the store
     // also takes you to the comment page on the button click
     const buttonClick = () => {
+        if (!supportToAdd) {
+            alert('Must add rating!');
+            return;
+        }
         dispatch({
             type: 'SUPPORT',
             payload: supportToAdd

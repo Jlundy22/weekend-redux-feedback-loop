@@ -13,6 +13,10 @@ function Feeling() {
     //disbatch the feeling rating to the store
     // also takes you to the understanding page on the button click
     const buttonClick = () => {
+        if (!feelingToAdd) {
+            alert('Must add rating!');
+            return;
+        }
         dispatch({
             type: 'FEELING',
             payload: feelingToAdd

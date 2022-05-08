@@ -13,6 +13,10 @@ function Understanding() {
     //disbatch the understanding rating to the store
     // also takes you to the support page on the button click
     const buttonClick = () => {
+        if (!understandingToAdd) {
+            alert('Must add rating!');
+            return;
+        }
         dispatch({
             type: 'UNDERSTANDING',
             payload: understandingToAdd

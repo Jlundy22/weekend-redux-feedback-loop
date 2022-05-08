@@ -6,11 +6,12 @@ function Comment() {
     const dispatch = useDispatch();
     const history = useHistory();
     let [commentToAdd, setCommentToAdd] = useState('');
-
+    //setCommentToAdd to the comment that has been input
     const handleInputChange = (event) => {
         setCommentToAdd(event.target.value);
     }
-
+    //disbatch the comment to the store
+    // also takes you to the review page on the button click
     const buttonClick = () => {
         dispatch({
             type: 'COMMENT',
@@ -21,14 +22,14 @@ function Comment() {
 
     return (
         <>
-        <p>Any comments you want to leave?</p>
-      <input
-        onChange={(event)=>handleInputChange(event)}
-        type='text'
-        placeholder='Comment'
-      />
+            <p>Any comments you want to leave?</p>
+            <input
+                onChange={(event) => handleInputChange(event)}
+                type='text'
+                placeholder='Comment'
+            />
 
-      <button onClick={buttonClick}type='submit'>Next</button>
+            <button onClick={buttonClick} type='submit'>Next</button>
         </>
     )
 }

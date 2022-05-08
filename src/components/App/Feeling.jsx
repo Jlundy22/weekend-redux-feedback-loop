@@ -6,11 +6,12 @@ function Feeling() {
     const dispatch = useDispatch();
     const history = useHistory();
     let [feelingToAdd, setFeelingToAdd] = useState('');
-
+    //setFeelingToAdd to the rating that has been input
     const handleInputChange = (event) => {
         setFeelingToAdd(event.target.value);
     }
-
+    //disbatch the feeling rating to the store
+    // also takes you to the understanding page on the button click
     const buttonClick = () => {
         dispatch({
             type: 'FEELING',
@@ -21,14 +22,14 @@ function Feeling() {
 
     return (
         <>
-        <p>How are you feeling today?</p>
-      <input
-        onChange={(event)=>handleInputChange(event)}
-        type='number'
-        placeholder='Rating'
-      />
+            <p>How are you feeling today?</p>
+            <input
+                onChange={(event) => handleInputChange(event)}
+                type='number'
+                placeholder='Rating 1-10'
+            />
 
-      <button onClick={buttonClick}type='submit'>Next</button>
+            <button onClick={buttonClick} type='submit'>Next</button>
         </>
     )
 }

@@ -3,21 +3,8 @@ const router = express.Router();
 
 const pool = require('../modules/pool');
 
-// Get all books
-// router.get('/', (req, res) => {
-//   let queryText = 'SELECT title, author FROM "books" ORDER BY "title";';
-//   pool.query(queryText).then(result => {
-//     // Sends back the results in an object
-//     res.send(result.rows);
-//   })
-//   .catch(error => {
-//     console.log('error getting books', error);
-//     res.sendStatus(500);
-//   });
-// });
 
-// Adds a new book to the list of awesome reads
-// Request body must be a book object with a title and author.
+// Adds a new review to the database
 router.post('/',  (req, res) => {
   let newReview = req.body;
   console.log(` POST Adding review`, newReview);

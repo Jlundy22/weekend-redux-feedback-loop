@@ -3,7 +3,8 @@ import axios from 'axios';
 import { useHistory } from 'react-router-dom';
 
 
-
+//declares variable equal to the current value 
+//that has been stored by the reducer
 function Review() {
 const feeling = useSelector(store => store.feelingReducer[0]);
 const understanding = useSelector(store => store.understandingReducer[0]);
@@ -11,6 +12,7 @@ const support = useSelector(store => store.supportReducer[0]);
 const comment = useSelector(store => store.commentReducer[0]);
 const history = useHistory();
 
+// sends all of the data stored to the database
     const handleSubmit= () => {
     
        
@@ -35,7 +37,9 @@ const history = useHistory();
         history.push('/Success');
     }
    
-
+//review page with all of your answers from the 
+//4 previous pages , hitting the submit button send
+// the info to the database
     return (
         <>
         <h1>Review Your Feedback</h1>

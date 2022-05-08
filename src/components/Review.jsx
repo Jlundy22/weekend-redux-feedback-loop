@@ -6,10 +6,10 @@ import { useHistory } from 'react-router-dom';
 //declares variable equal to the current value 
 //that has been stored by the reducer
 function Review() {
-const feeling = useSelector(store => store.feelingReducer[0]);
-const understanding = useSelector(store => store.understandingReducer[0]);
-const support = useSelector(store => store.supportReducer[0]);
-const comment = useSelector(store => store.commentReducer[0]);
+const feeling = useSelector(store => store.feelingReducer[store.feelingReducer.length - 1]);
+const understanding = useSelector(store => store.understandingReducer[store.understandingReducer.length - 1]);
+const support = useSelector(store => store.supportReducer[store.supportReducer.length - 1]);
+const comment = useSelector(store => store.commentReducer[store.commentReducer.length - 1]);
 const history = useHistory();
 
 // sends all of the data stored to the database
